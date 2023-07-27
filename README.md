@@ -50,3 +50,21 @@ The Discovery Server module uses the Service Discovery Design pattern and is bui
 
 # API Gateway
 The API Gateway serves as a central entry point for clients to access all microservices. It handles client requests and routes them to the appropriate microservice. The API Gateway provides a unified interface and helps in enforcing security, rate limiting, and other cross-cutting concerns.
+
+# Spring Security Using Oauth2.0 (KeyCloak)
+Implement Spring security using KeyCloak. We have our Authorization Type as OAuth2.0.
+Steps to run security,KeyCloak and Get valid Token
+1. run command-> docker run -p 8181:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:22.0.1 start-dev
+2.Check if the keycloak service is active-> docker ps
+3.Refer the video in the reference folder to get to know the settings->keycloak_settings.mp4
+4.After you get the settings done copy the secret client key and token url from the keycloak and open postman
+5.Refer this video for postman setting->postman_config.mp4
+
+# Circuit Breaker using Resilience4j
+This is basically a fault tolerance mechanism. The need of this component with a practicle example could be 
+Example : We order a product & it internally calls the inventory-service and if inventory-service fails to cater the request due to various reasons like 
+1.If the service is down
+2.Timeout to respond to the request
+That's where this system comes into picture
+
+We have also implemented the Retry mechanism for the order service so that it tries 3 times before failing a request
