@@ -56,9 +56,9 @@ Implement Spring security using KeyCloak. We have our Authorization Type as OAut
 Steps to run security,KeyCloak and Get valid Token
 1. run command-> docker run -p 8181:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:22.0.1 start-dev
 2.Check if the keycloak service is active-> docker ps
-3.Refer the video in the reference folder to get to know the settings->keycloak_settings.mp4
+3.Refer the video in the reference folder to get to know the settings->keycloak_settings.mp4(Link->https://github.com/harmeetsingh7276/Microservices-ShoppingApp/blob/a7a71f4068f369332e6b928d497d7de0c4d074fd/reference/keycloak_settings.mp4)
 4.After you get the settings done copy the secret client key and token url from the keycloak and open postman
-5.Refer this video for postman setting->postman_config.mp4
+5.Refer this video for postman setting->postman_config.mp4(Link->https://github.com/harmeetsingh7276/Microservices-ShoppingApp/blob/a7a71f4068f369332e6b928d497d7de0c4d074fd/reference/postman_config.mp4)
 
 # Circuit Breaker using Resilience4j
 This is basically a fault tolerance mechanism. The need of this component with a practicle example could be 
