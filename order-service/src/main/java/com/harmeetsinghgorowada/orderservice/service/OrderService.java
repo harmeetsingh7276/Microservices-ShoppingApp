@@ -3,7 +3,7 @@ package com.harmeetsinghgorowada.orderservice.service;
 import com.harmeetsinghgorowada.orderservice.dto.InventoryResponse;
 import com.harmeetsinghgorowada.orderservice.dto.OrderLineItemsDto;
 import com.harmeetsinghgorowada.orderservice.dto.OrderRequest;
-import com.harmeetsinghgorowada.orderservice.event.OrderPlacedEvent;
+import com.harmeetsinghgorowada.orderservice.OrderPlacedEvent;
 import com.harmeetsinghgorowada.orderservice.model.Order;
 import com.harmeetsinghgorowada.orderservice.model.OrderLineItems;
 import com.harmeetsinghgorowada.orderservice.repository.OrderRepository;

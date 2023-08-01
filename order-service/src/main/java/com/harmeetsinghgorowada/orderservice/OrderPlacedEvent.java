@@ -1,4 +1,4 @@
-package com.harmeetsinghgorowada.orderservice.event;
+package com.harmeetsinghgorowada.orderservice;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
