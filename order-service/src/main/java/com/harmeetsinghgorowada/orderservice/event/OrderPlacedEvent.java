@@ -6,6 +6,6 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class OrderPlaceEvent {
+public class OrderPlacedEvent {
     private String orderNumber;
 }

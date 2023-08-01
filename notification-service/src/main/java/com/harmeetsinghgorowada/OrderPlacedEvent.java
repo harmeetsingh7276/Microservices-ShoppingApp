@@ -1,4 +1,4 @@
-package com.harmeetsinghgorowada.event;
+package com.harmeetsinghgorowada;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

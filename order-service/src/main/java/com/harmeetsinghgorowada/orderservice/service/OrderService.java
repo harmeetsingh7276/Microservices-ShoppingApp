@@ -3,7 +3,7 @@ package com.harmeetsinghgorowada.orderservice.service;
 import com.harmeetsinghgorowada.orderservice.dto.InventoryResponse;
 import com.harmeetsinghgorowada.orderservice.dto.OrderLineItemsDto;
 import com.harmeetsinghgorowada.orderservice.dto.OrderRequest;
-import com.harmeetsinghgorowada.orderservice.event.OrderPlaceEvent;
+import com.harmeetsinghgorowada.orderservice.event.OrderPlacedEvent;
 import com.harmeetsinghgorowada.orderservice.model.Order;
 import com.harmeetsinghgorowada.orderservice.model.OrderLineItems;
 import com.harmeetsinghgorowada.orderservice.repository.OrderRepository;
@@ -24,7 +24,7 @@ public class OrderService {
 
     private final OrderRepository orderRepository;
     private final WebClient.Builder webClientBuilder;
-    private final KafkaTemplate<String, OrderPlaceEvent> kafkaTemplate;
+    private final KafkaTemplate<String, OrderPlacedEvent> kafkaTemplate;
 
     public String placeOrder(OrderRequest orderRequest) {
         Order order = new Order();
@@ -54,7 +54,7 @@ public class OrderService {
         if (allProductsInStock) {
             orderRepository.save(order);
 //            kafkaTemplate.send("notificationTopic", new OrderPlaceEvent(order.getOrderNumber()));
-            kafkaTemplate.send("notificationTopic",new OrderPlaceEvent(order.getOrderNumber()));
+            kafkaTemplate.send("notificationTopic",new OrderPlacedEvent(order.getOrderNumber()));
             return "Order Placed successfully";
         } else {
             throw new IllegalArgumentException("Product is not in stock, Please try again later");
