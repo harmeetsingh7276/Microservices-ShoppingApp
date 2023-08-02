@@ -14,11 +14,16 @@ Service Discovery: Utilizes the Service Discovery Design pattern to register and
 API Gateway: Acts as a single entry point to access all the microservices, keeping the URL consistent for clients.
 
 # Technologies Used
-Java
-Spring Boot
-Spring Cloud
-Eureka Server
-API Gateway
+Java,
+Spring Boot,
+Spring Cloud,
+Eureka Server,
+API Gateway,
+Docker
+KeyCloak,
+OAuth2.0,
+Kafka,
+Zookeeper
 
 
 # Setup
@@ -68,3 +73,8 @@ Example : We order a product & it internally calls the inventory-service and if 
 That's where this system comes into picture
 
 We have also implemented the Retry mechanism for the order service so that it tries 3 times before failing a request
+
+# Event Driven Streaming using Kafka
+1. An **"OrderPlacedEvent"** has been meticulously designed and implemented as a pivotal component within the architecture of our system. This event is to be triggered seamlessly by our esteemed OrderService, signifying the placement of a new order within the platform.
+2. To ensure streamlined communication and real-time data propagation across our distributed ecosystem, we have integrated Kafka, a high-throughput, fault-tolerant messaging system. Leveraging Kafka's event-driven architecture, we channel the "OrderPlacedEvent" with utmost efficiency to various pertinent services within the network.
+3. Upon successful triggering of the "OrderPlacedEvent," the system initiates a synchronous invocation of our eminent Notification Service. This service serves as the pivotal conduit to deliver comprehensive and personalized email confirmations to our valued customers, ensuring order details and other pertinent information are effectively communicated.
